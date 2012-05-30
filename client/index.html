@@ -1,0 +1,68 @@
+<html lang="en">
+  <head>
+    <title>Synchronized Photo Gallery</title>
+    <meta charset="UTF-8" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="statsWrapper">
+      <div id="stats">
+        <canvas id="statCanvasL" width="400" height="300"></canvas><!--
+        --><canvas id="statCanvasR" width="400" height="300"></canvas>
+      </div>
+    </div>
+
+    <div id="wrapper">
+
+      <div id="title">
+        <h3>Synchronized Photo Gallery</h3>
+      </div>
+      
+      <div id="clientCount"></div>
+
+      <div class="clear"></div>
+
+      <div id="prev">&laquo;</div>
+      <div id="slideshow">
+        <div id="images">
+          <img src="http://farm4.staticflickr.com/3246/2432635215_510e781fbc_z.jpg" /><!--
+          --><img src="http://farm2.staticflickr.com/1104/5119057633_2422485a48_z.jpg" /><!--
+          --><img src="http://farm8.staticflickr.com/7227/7253672484_632cffaa74_z.jpg" /><!--
+          --><img src="http://farm1.staticflickr.com/17/4088849320_6a4f6d2f08_z.jpg" /><!--
+          --><img src="http://farm5.staticflickr.com/4060/4381197316_ff2475974e_z.jpg" /><!--
+          --><img src="http://farm3.staticflickr.com/2660/4067541410_c491443aa1_z.jpg" /><!--
+          --><img src="http://farm3.staticflickr.com/2588/3849947067_28936ffd6e_z.jpg" />
+        </div>
+      </div>
+      <div id="next">&raquo;</div>
+
+      <div class="clear"></div>
+
+      <div id="content">
+        <p>
+          Use the left/right side buttons above to scroll through the images.  You can also
+          use a swipe gesture with your finger on a mobile device or the mouse on a computer.
+          Each action will be synchronized with all other devices connected to this same
+          web page.
+        </p>
+        <p>
+          The graph at the top shows active user history in blue on the left and actions per second
+          in green on the right.  Newest data starts from the inside and scrolls outward.
+        </p>
+      </div>
+
+    </div>
+
+    <div id="debug"></div>
+
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.touchSwipe-1.2.5.js"></script>
+    <script type="text/javascript" src="http://wyne.dyndns.org:8080/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="swipe.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="interface.js"></script>
+
+  </body>
+</html>
+

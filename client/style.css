@@ -1,0 +1,119 @@
+body{
+  background: #45484d; /* Old browsers */
+  background: -moz-linear-gradient(top,  #45484d 0%, #000000 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45484d), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #45484d 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #45484d 0%,#000000 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #45484d 0%,#000000 100%); /* IE10+ */
+  background: linear-gradient(top,  #45484d 0%,#000000 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+    font-family: 'Arial', 'Verdana';
+    color: #EEE;
+    font-size: large;
+    margin: 0px;
+}
+
+#clientCount{
+  text-align: right;
+  float: right;
+}
+
+canvas{
+  margin: 0px;
+  position: absolute;
+  z-index: 0;
+}
+
+#statCanvasL{ right: 50%; }
+#statCanvasR{ left: 50%; }
+
+#statsWrapper{
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+#stats{
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#wrapper{
+  z-index: 10;
+  position: relative;
+  width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+}
+
+#prev, #next{
+  z-index: 10;
+  position: relative;
+  background-color: black;
+  cursor: pointer;
+  float: left;
+  width: 50px;
+  height: 447px;
+  transition: background-color 0.5s ease-out;
+  -webkit-transition: background-color 0.5s ease-out;
+  font-size: 50px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 427px;
+}
+
+#prev:hover, #next:hover{
+  background-color: #234;
+}
+
+#slideshow{
+  float: left;
+  height: 427px;
+  width: 640px;
+  overflow: hidden;
+  position: relative;
+  border: 10px solid black;
+  background-color: black;
+}
+
+#images{
+  float: left;
+  display: inline;
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-duration: 0.5s;
+  /*-webkit-transition-timing-function: ease-in;*/
+  padding: 0px;
+  margin: 0px;
+  width: 4480;
+  /* TODO: Apply for hardware acceleration */
+  -webkit-transform: translate3d(0px,0px,0px);
+}
+
+#images img{
+  padding: 0px;
+  margin: 0px;
+  width: 640;
+  height: 427;
+  opacity: 0.2;
+  transition: opacity 0.1s linear;
+  -webkit-transition: opacity 0.1s linear;
+  /* TODO: Apply for hardware acceleration */
+  -webkit-transform: translate3d(0px,0px,0px);
+}
+
+#images img.focused{
+  opacity: 1;
+  transition: opacity 1s linear;
+  -webkit-transition: opacity 1s linear;
+}
+
+#debug{
+  position: absolute;
+  color: gray;
+  font-size: small;
+}
+
+.clear{
+  clear: both;
+}
