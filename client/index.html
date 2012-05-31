@@ -2,6 +2,7 @@
   <head>
     <title>Synchronized Photo Gallery</title>
     <meta charset="UTF-8" />
+    <link href='http://fonts.googleapis.com/css?family=Comfortaa:400,700' rel='stylesheet' type='text/css'>
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
@@ -17,7 +18,7 @@
     <div id="wrapper">
 
       <div id="title">
-        <h3>Synchronized Photo Gallery</h3>
+        <h2>Synchronized Photo Gallery</h2>
       </div>
       
       <div id="clientCount"></div>
@@ -40,13 +41,15 @@
 
       <div class="clear"></div>
 
-      <div id="content">
+      <div id="content" class="fade-in delay3 glare">
+        <h3>Instructions</h3>
         <p>
           Use the left/right side buttons above to scroll through the images.  You can also
           use a swipe gesture with your finger on a mobile device or the mouse on a computer.
-          Each action will be synchronized with all other devices connected to this same
-          web page.
+          Each action will be synchronized with all other devices visiting this page.
         </p>
+
+        <h3>Details</h3>
         <p>
           The graph at the top shows active user history in blue on the left and actions per second
           in green on the right.  Newest data starts from the inside and scrolls outward.

@@ -99,11 +99,12 @@ function scrollToImage( i ) {
 */
 function scrollImages(distance, duration) {
   // toFixed takes care of divide by zero
-  imgs.css( "-webkit-transition-duration", 
-    ( duration/1000 ).toFixed(1) + "s");
+  imgs.css( "-webkit-transition-duration", ( duration/1000 ).toFixed(1) + "s");
+  imgs.css( "-moz-transition-duration", ( duration/1000 ).toFixed(1) + "s");
 
   //inverse the number we set in the css
   var value = ( distance < 0 ? "" : "-") + Math.abs( distance ).toString();
 
   imgs.css( "-webkit-transform", "translateX(" + value + "px)" );
+  imgs.css( "-moz-transform", "translateX(" + value + "px)" );
 }

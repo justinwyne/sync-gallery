@@ -14,8 +14,8 @@ body{
 }
 
 #clientCount{
-  text-align: right;
-  float: right;
+  text-align: center;
+  margin-bottom: 5px;
 }
 
 canvas{
@@ -45,7 +45,22 @@ canvas{
   margin-left: auto;
   margin-right: auto;
   margin-top: 60px;
+  font-family: 'Comfortaa', cursive;
 }
+
+#wrapper h2{
+  text-shadow: rgba(0, 0, 0, 0.6) 2px 2px 4px;
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+#wrapper h3{
+  text-shadow: rgba(0, 0, 0, 0.6) 2px 2px 4px;
+  font-size: 24px;
+  text-align: center;
+}
+
 
 #prev, #next{
   z-index: 10;
@@ -55,8 +70,10 @@ canvas{
   float: left;
   width: 50px;
   height: 447px;
-  transition: background-color 0.5s ease-out;
   -webkit-transition: background-color 0.5s ease-out;
+     -moz-transition: background-color 0.5s ease-out;
+      -ms-transition: background-color 0.5s ease-out;
+          transition: background-color 0.5s ease-out;
   font-size: 50px;
   text-align: center;
   vertical-align: middle;
@@ -116,4 +133,79 @@ canvas{
 
 .clear{
   clear: both;
+}
+
+/* Create Fade Key Frames */
+@-webkit-keyframes fadeIn { 
+  0% { opacity: 0; } 
+  50% { opacity: 1; }
+  75% { text-shadow: 0px 0px 5px yellow; } 
+  100% { opacity: 1; }
+}
+
+@-moz-keyframes fadeIn {
+  0% { opacity: 0; } 
+  50% { opacity: 1; }
+  75% { text-shadow: 0px 0px 5px yellow; } 
+  100% { opacity: 1; }
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 0.7; } }
+
+/* Shake Animation */
+@keyframes shake{ 
+  0% { transform: translate(3px, 0); }
+  50% { transform: translate(-3px, 0); }
+  100% { transform: translate(0, 0); }
+}
+
+@-moz-keyframes shake{ 
+  0% { -moz-transform: translate(3px, 0); }
+  50% { -moz-transform: translate(-3px, 0); }
+  100% { -moz-transform: translate(0, 0); }
+}
+
+@-webkit-keyframes shake {
+  0% { -webkit-transform: translate(3px, 0); }
+  50% { -webkit-transform: translate(-3px, 0); }
+  100% { -webkit-transform: translate(0, 0); }
+}
+
+.shake {
+  animation-name: shake; 
+  animation-duration: 150ms; 
+  animation-iteration-count: 2; 
+  animation-timing-function: linear;
+
+  -moz-animation-name: shake; 
+  -moz-animation-duration: 150ms; 
+  -moz-animation-iteration-count: 2; 
+  -moz-animation-timing-function: linear;
+
+  -webkit-animation-name: shake;
+  -webkit-animation-duration: 150ms;
+  -webkit-animation-iteration-count: 2;
+  -webkit-animation-timing-function: linear;
+}
+
+.fade-in {
+  opacity: 0;  /* invisible on start */
+  /* call keyframe named fadeIn, use only 1 time */
+  -webkit-animation: fadeIn ease-in 1;  
+     -moz-animation: fadeIn ease-in 1;
+          animation: fadeIn ease-in 1;
+
+  /* make sure that after animation is done, remain at the last keyframe value (opacity: 1) */
+  -webkit-animation-fill-mode: forwards; 
+     -moz-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+
+  -webkit-animation-duration: 1s;
+     -moz-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.fade-in.delay3{
+  -webkit-animation-delay: 3s;
+     -moz-animation-delay: 3s;
+          animation-delay: 3s;
 }

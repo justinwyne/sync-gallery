@@ -55,10 +55,10 @@ function updateGraph( value, value2 ) {
   ctxRight.putImageData( imgR, barWidth , 0 );
 
   // Clear right-most column
-  ctxLeft.fillStyle = "rgba(0,100,150,0.5)";
-  ctxRight.fillStyle = "rgba(68,119,68,0.5)";
-  ctxLeft.strokeStyle = "rgba(0,50,75,0.5)";
-  ctxRight.strokeStyle = "rgba(0,31,0,0.2)";
+  ctxLeft.fillStyle = "rgba(0,100,150,1)";
+  ctxRight.fillStyle = "rgba(68,119,68,1)";
+  ctxLeft.strokeStyle = "rgba(0,50,75,1)";
+  ctxRight.strokeStyle = "rgba(0,31,0,1)";
   ctxLeft.lineWidth = 1;
   ctxRight.lineWidth = 1;
 
