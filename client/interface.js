@@ -6,7 +6,7 @@ var ctxRight = canvasRight.getContext("2d");
 $(document).ready(function() {
 
     // Disable default drag/drop of images
-    $('img').bind('dragstart', function(event) { event.preventDefault(); });
+    $('#slideshow img').bind('dragstart', function(event) { event.preventDefault(); });
 
     // Register handlers
     $("#prev").click( function() {

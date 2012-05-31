@@ -90,8 +90,8 @@ function scrollToImage( i ) {
   currentImg = Math.max(i, 0);
   currentImg = Math.min(currentImg, maxImages-1);
   scrollImages( IMG_WIDTH * currentImg, speed);
-  $("img").removeClass("focused");
-  $("img:eq(" + currentImg + ")").addClass("focused");
+  $("#slideshow img").removeClass("focused");
+  $("#slideshow img:eq(" + currentImg + ")").addClass("focused");
 }
 
 /**
