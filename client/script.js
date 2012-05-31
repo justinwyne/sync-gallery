@@ -1,4 +1,3 @@
-//TODO: handled no connection
 var socket = io.connect('ws://wyne.dyndns.org:8080');
 
 $(document).ready(function(){

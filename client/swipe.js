@@ -98,12 +98,12 @@ function scrollToImage( i ) {
 * Manually update the position of the imgs on drag
 */
 function scrollImages(distance, duration) {
-  // toFixed takes care of divide by zero
+  // toFixed takes care of divide by zero (sets to 0)
   imgs.css( "-webkit-transition-duration", ( duration/1000 ).toFixed(1) + "s");
   imgs.css( "-moz-transition-duration", ( duration/1000 ).toFixed(1) + "s");
 
-  //inverse the number we set in the css
-  var value = ( distance < 0 ? "" : "-") + Math.abs( distance ).toString();
+  // Invert distance for css transformation
+  var value = ( -distance ).toString();
 
   imgs.css( "-webkit-transform", "translateX(" + value + "px)" );
   imgs.css( "-moz-transform", "translateX(" + value + "px)" );

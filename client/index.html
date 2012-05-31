@@ -6,7 +6,7 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <a href="https://https://github.com/justinwyne/sync-gallery"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png" alt="Fork me on GitHub"></a>
+    <a href="https://https://github.com/justinwyne/sync-gallery"><img style="position: absolute; z-index: 10; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png" alt="Fork me on GitHub"></a>
 
     <div id="statsWrapper">
       <div id="stats">
@@ -25,8 +25,8 @@
 
       <div class="clear"></div>
 
-      <div id="prev">&laquo;</div>
-      <div id="slideshow">
+      <div id="prev" class="fade-in delay1">&laquo;</div>
+      <div id="slideshow" class="fade-in delay1">
         <div id="images">
           <img src="http://farm4.staticflickr.com/3246/2432635215_510e781fbc_z.jpg" /><!--
           --><img src="http://farm2.staticflickr.com/1104/5119057633_2422485a48_z.jpg" /><!--
@@ -37,11 +37,11 @@
           --><img src="http://farm3.staticflickr.com/2588/3849947067_28936ffd6e_z.jpg" />
         </div>
       </div>
-      <div id="next">&raquo;</div>
+      <div id="next" class="fade-in delay1">&raquo;</div>
 
       <div class="clear"></div>
 
-      <div id="content" class="fade-in delay3 glare">
+      <div id="content" class="fade-in delay2 glare">
         <h3>Instructions</h3>
         <p>
           Use the left/right side buttons above to scroll through the images.  You can also
@@ -54,6 +54,7 @@
           The graph at the top shows active user history in blue on the left and actions per second
           in green on the right.  Newest data starts from the inside and scrolls outward.
         </p>
+        <div id="footer"></div>
       </div>
 
     </div>

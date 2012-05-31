@@ -13,11 +13,6 @@ body{
     margin: 0px;
 }
 
-#clientCount{
-  text-align: center;
-  margin-bottom: 5px;
-}
-
 canvas{
   margin: 0px;
   position: absolute;
@@ -32,6 +27,7 @@ canvas{
   top: 0px;
   width: 100%;
 }
+
 #stats{
   width: 800px;
   margin-left: auto;
@@ -58,9 +54,12 @@ canvas{
 #wrapper h3{
   text-shadow: rgba(0, 0, 0, 0.6) 2px 2px 4px;
   font-size: 24px;
-  text-align: center;
 }
 
+#clientCount{
+  text-align: center;
+  margin-bottom: 5px;
+}
 
 #prev, #next{
   z-index: 10;
@@ -80,9 +79,7 @@ canvas{
   line-height: 427px;
 }
 
-#prev:hover, #next:hover{
-  background-color: #234;
-}
+#prev:hover, #next:hover{ background-color: #234; }
 
 #slideshow{
   float: left;
@@ -98,13 +95,15 @@ canvas{
   float: left;
   display: inline;
   -webkit-transition-property: -webkit-transform;
+     -moz-transition-property: -moz-transform;
   -webkit-transition-duration: 0.5s;
-  /*-webkit-transition-timing-function: ease-in;*/
+     -moz-transition-duration: 0.5s;
   padding: 0px;
   margin: 0px;
   width: 4480;
-  /* TODO: Apply for hardware acceleration */
+  /* Apply for hardware acceleration */
   -webkit-transform: translate3d(0px,0px,0px);
+     -moz-transform: translate3d(0px,0px,0px);
 }
 
 #images img{
@@ -113,16 +112,20 @@ canvas{
   width: 640;
   height: 427;
   opacity: 0.2;
-  transition: opacity 0.1s linear;
   -webkit-transition: opacity 0.1s linear;
-  /* TODO: Apply for hardware acceleration */
+     -moz-transition: opacity 0.1s linear;
+          transition: opacity 0.1s linear;
+  /* Apply for hardware acceleration */
   -webkit-transform: translate3d(0px,0px,0px);
+     -moz-transform: translate3d(0px,0px,0px);
+          transform: translate3d(0px,0px,0px);
 }
 
 #images img.focused{
   opacity: 1;
-  transition: opacity 1s linear;
   -webkit-transition: opacity 1s linear;
+     -moz-transition: opacity 1s linear;
+          transition: opacity 1s linear;
 }
 
 #debug{
@@ -131,11 +134,21 @@ canvas{
   font-size: small;
 }
 
-.clear{
-  clear: both;
+.clear{ clear: both; }
+
+#footer{
+  background-image: url(http://www.fengqi.asia/images/nodejs.png);
+  height: 115px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-/* Create Fade Key Frames */
+
+/*
+=========== Animations =========== 
+*/
+
+/* Fade Animation */
 @-webkit-keyframes fadeIn { 
   0% { opacity: 0; } 
   50% { opacity: 1; }
@@ -150,6 +163,35 @@ canvas{
   100% { opacity: 1; }
 }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 0.7; } }
+
+.fade-in {
+  opacity: 0;  /* invisible on start */
+  /* call keyframe named fadeIn, use only 1 time */
+  -webkit-animation: fadeIn ease-in 1;  
+     -moz-animation: fadeIn ease-in 1;
+          animation: fadeIn ease-in 1;
+
+  /* make sure that after animation is done, remain at the last keyframe value (opacity: 1) */
+  -webkit-animation-fill-mode: forwards; 
+     -moz-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+
+  -webkit-animation-duration: 1s;
+     -moz-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.fade-in.delay1{
+  -webkit-animation-delay: 1s;
+     -moz-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.fade-in.delay2{
+  -webkit-animation-delay: 2s;
+     -moz-animation-delay: 2s;
+          animation-delay: 2s;
+}
 
 /* Shake Animation */
 @keyframes shake{ 
@@ -187,25 +229,3 @@ canvas{
   -webkit-animation-timing-function: linear;
 }
 
-.fade-in {
-  opacity: 0;  /* invisible on start */
-  /* call keyframe named fadeIn, use only 1 time */
-  -webkit-animation: fadeIn ease-in 1;  
-     -moz-animation: fadeIn ease-in 1;
-          animation: fadeIn ease-in 1;
-
-  /* make sure that after animation is done, remain at the last keyframe value (opacity: 1) */
-  -webkit-animation-fill-mode: forwards; 
-     -moz-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-
-  -webkit-animation-duration: 1s;
-     -moz-animation-duration: 1s;
-          animation-duration: 1s;
-}
-
-.fade-in.delay3{
-  -webkit-animation-delay: 3s;
-     -moz-animation-delay: 3s;
-          animation-delay: 3s;
-}
